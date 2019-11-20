@@ -1,0 +1,13 @@
+<!-- This footer should hidden by default and shown when there are todos -->
+<footer class="footer">
+    <!-- This should be `0 items left` by default -->
+    <span class="todo-count"><strong>{{ active }}</strong> item left</span>
+    <!-- Remove this if you don't implement routing -->
+    <ul class="filters">
+      <li (click)="cangeFilter(filter)"  *ngFor="let filter of setFiltersValid">
+        <a [ngClass]="{'selected': filter === selectedFilter}" class="selected" href="#/">{{ filter }}</a>
+      </li>
+    </ul>
+    <!-- Hidden if no completed items are left ↓ -->
+    <button (click)="clearCompletedTodo()" class="clear-completed">Clear completed</button>
+  </footer>
